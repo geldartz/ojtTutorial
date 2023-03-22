@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +15,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('app');
+});
+
+
+Route::get('/crud', [App\Http\Controllers\DevelopersController::class, 'index'])->name('developers');
+
+Route::get('/about-us', function () {
+    return view('about');
+});
+
+Route::get('/add', function () {
+    return view('form');
 });
