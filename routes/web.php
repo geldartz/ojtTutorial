@@ -20,6 +20,13 @@ Route::get('/', function () {
 
 
 Route::get('/crud', [App\Http\Controllers\DevelopersController::class, 'index'])->name('developers');
+Route::post('/save-data', [App\Http\Controllers\DevelopersController::class, 'store'])->name('store');
+Route::get('/delete/{id}', [App\Http\Controllers\DevelopersController::class, 'destroy'])->name('delete');
+
+Route::get('/edit/{id}', [App\Http\Controllers\DevelopersController::class, 'edit'])->name('edit');
+
+Route::put('/update-data', [App\Http\Controllers\DevelopersController::class, 'update'])->name('update');
+
 
 Route::get('/about-us', function () {
     return view('about');
